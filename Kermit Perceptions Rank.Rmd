@@ -12,3 +12,17 @@ knitr::opts_chunk$set(echo = TRUE)
 Hey Kelly.
 
 Hi
+
+I am loading packages, data, and intial data exploration (Kelly)
+```{r}
+library(tidyverse)
+
+kermit <- read_csv("kermit.csv") 
+
+score.pre_hist <- ggplot(kermit, aes(x = Score.pre)) +
+  geom_histogram(bins = 5) +
+  facet_wrap(~Gender)
+score.pre_hist
+
+```
+
