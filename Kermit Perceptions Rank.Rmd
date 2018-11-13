@@ -13,8 +13,6 @@ Hey Kelly.
 
 Hi
 
-<<<<<<< HEAD
-=======
 I am loading packages, data, and intial data exploration (Kelly)
 ```{r}
 library(tidyverse)
@@ -28,4 +26,20 @@ score.pre_hist
 
 ```
 
->>>>>>> 252a026610d0c53675adff6a248da1c3857cc947
+
+Chase the Creator: Perform rank-based comparisons using Mann-Whitney U and Wilcoxon-Signed Rank
+
+Question: Is there a significant difference in pre-talk ranks of Kermit for Male and Female respondents?
+
+```{r}
+mwu_kermit <- kermit %>% 
+  wilcox.test(Score.pre ~ Gender, data = .)
+
+# Null Hyp: There is NOT a significant difference in ranks for male and female respondants
+
+# Alt Hyp: There IS a signficant difference in ranks
+
+mwu_kermit
+```
+
+"There was no significant difference in ranks for male and female respondeents (W = 155.5, p = 0.4, alpha = 0.05)."
